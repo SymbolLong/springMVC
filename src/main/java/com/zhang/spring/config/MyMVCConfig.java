@@ -37,8 +37,20 @@ public class MyMVCConfig extends WebMvcConfigurerAdapter{
         registry.addInterceptor(demoInterceptor());
     }
 
+    /**
+     * 快捷配置ViewController
+     * @param registry
+     */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index").setViewName("/index");
+    }
+
+    /**
+     * 路径参数忽略.(默认true）
+     */
+    @Override
+    public void configurePathMatch(PathMatchConfigurer configurer) {
+        configurer.setUseSuffixPatternMatch(false);
     }
 }
