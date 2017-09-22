@@ -18,9 +18,6 @@
             contentType:"application/x-wisely",
             success: function (data) {
                 $("#resp").html(data);
-            },
-            error: function (data) {
-                alert(data);
             }
         });
     }
